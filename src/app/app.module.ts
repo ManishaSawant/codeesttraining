@@ -8,22 +8,29 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { StaticpagesModule } from './staticpages/staticpages.module';
 import { CoursesModule } from './courses/courses.module';
+import { AdminModule } from './admin/admin.module';
+import { AuthModule } from './auth/auth.module';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { Employeeservice } from './auth/employeeservice';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BannerComponent,
+     BannerComponent,
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     CoursesModule,
-    StaticpagesModule
+    StaticpagesModule,
+    AdminModule,
+    AuthModule
   ],
-  providers: [],
+  providers: [Employeeservice],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
